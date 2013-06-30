@@ -597,6 +597,21 @@
               <FileType>1</FileType>
               <FilePath>.\User\Retarget.c</FilePath>
             </File>
+            <File>
+              <FileName>usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\usart.c</FilePath>
+            </File>
+            <File>
+              <FileName>led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>irq.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\irq.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
