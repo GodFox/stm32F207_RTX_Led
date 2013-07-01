@@ -2,13 +2,14 @@
 #include "usart.h"
 #include "led.h"
 #include "irq.h"
+#include "key.c"
 #include <RTL.h>
 #include <stdio.h>
 
 
 unsigned char LedCunt;
 
-OS_TID tsk_1,tsk_2;
+OS_TID tsk_1,tsk_2,tsk_3;
 
 __task void LedTest(void)
 {
@@ -80,10 +81,18 @@ __task void Inter_Uart(void)
 	while(1);
 }
 
+__task void Exti_key(void)
+{
+	
+	printf("task Exti Key\n");
+	while(1);
+}
+
 __task void run(void)
 {
 	tsk_1 = os_tsk_create(LedTest,0);
-	tsk_2 = os_tsk_create(Inter_Uart,0);
+	//tsk_2 = os_tsk_create(Inter_Uart,0);
+	tsk_3 = os_tsk_create(Exti_key,0);
 	
 	os_tsk_delete_self();
 }
@@ -95,6 +104,11 @@ int main(void)
 	LedInit();
 	usartinit();
 	NVIC_Config();
+	
+	keyinit();
+	EXTI_Configuration();
+	NVIC_Configuration();
+	
 	os_sys_init(run);
 	for(;;);
 }

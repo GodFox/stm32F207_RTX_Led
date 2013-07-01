@@ -23,7 +23,7 @@
 //   <o>Number of concurrent running tasks <0-250>
 //   <i> Define max. number of tasks that will run at the same time.
 //   <i> Default: 6
-#ifndef OS_TASKCNT
+#ifndef OS_TASKCNT																																						//定义最大支持的任务数量
  #define OS_TASKCNT     8
 #endif
 
@@ -31,14 +31,14 @@
 //   <i> Define the number of tasks that will use a bigger stack.
 //   <i> The memory space for the stack is provided by the user.
 //   <i> Default: 0
-#ifndef OS_PRIVCNT
+#ifndef OS_PRIVCNT																																						//定义使用大堆栈的任务数目
  #define OS_PRIVCNT     0
 #endif
 
 //   <o>Task stack size [bytes] <20-4096:8><#/4>
 //   <i> Set the stack size for tasks which is assigned by the system.
 //   <i> Default: 200
-#ifndef OS_STKSIZE
+#ifndef OS_STKSIZE																																						//设置堆栈大小
  #define OS_STKSIZE     50
 #endif
 
@@ -46,7 +46,7 @@
 // ===============================
 // <i> Include the stack checking code for a stack overflow.
 // <i> Note that additional code reduces the Kernel performance.
-#ifndef OS_STKCHECK
+#ifndef OS_STKCHECK																																						//堆栈溢出检查
  #define OS_STKCHECK    1
 #endif
 
@@ -54,7 +54,7 @@
 // =========================
 // <i> Run all Tasks in privileged mode.
 // <i> Default: Unprivileged
-#ifndef OS_RUNPRIV
+#ifndef OS_RUNPRIV																																						//是否运行在特权模式
  #define OS_RUNPRIV     0
 #endif
 
@@ -64,14 +64,14 @@
 //   <o>Timer clock value [Hz] <1-1000000000>
 //   <i> Set the timer clock value for selected timer.
 //   <i> Default: 6000000  (6MHz)
-#ifndef OS_CLOCK
+#ifndef OS_CLOCK																																							//系统时钟频率设置
  #define OS_CLOCK       120000000
 #endif
 
 //   <o>Timer tick value [us] <1-1000000>
 //   <i> Set the timer tick value for selected timer.
 //   <i> Default: 10000  (10ms)
-#ifndef OS_TICK
+#ifndef OS_TICK																																								//设置定时器的超时时间
  #define OS_TICK        10000
 #endif
 
@@ -82,14 +82,14 @@
 // <e>Round-Robin Task switching
 // =============================
 // <i> Enable Round-Robin Task switching.
-#ifndef OS_ROBIN
+#ifndef OS_ROBIN																																							//时间片轮转开关
  #define OS_ROBIN       1
 #endif
 
 //   <o>Round-Robin Timeout [ticks] <1-1000>
 //   <i> Define how long a task will execute before a task switch.
 //   <i> Default: 5
-#ifndef OS_ROBINTOUT
+#ifndef OS_ROBINTOUT																																				//时间片设置
  #define OS_ROBINTOUT   5
 #endif
 
@@ -98,7 +98,7 @@
 //   <o>Number of user timers <0-250>
 //   <i> Define max. number of user timers that will run at the same time.
 //   <i> Default: 0  (User timers disabled)
-#ifndef OS_TIMERCNT
+#ifndef OS_TIMERCNT																																				//定义同时运行的定时器的最大数目
  #define OS_TIMERCNT    0
 #endif
 
@@ -110,7 +110,7 @@
 //   <i> ISR functions store requests to this buffer,
 //   <i> when they are called from the iterrupt handler.
 //   <i> Default: 16 entries
-#ifndef OS_FIFOSZ
+#ifndef OS_FIFOSZ																																				//中断服务程序请求队列
  #define OS_FIFOSZ      16
 #endif
 
@@ -122,7 +122,7 @@
 // ===============================
 //  Define max. number system mutexes that are used to protect 
 //  the arm standard runtime library. For microlib they are not used.
-#ifndef OS_MUTEXCNT
+#ifndef OS_MUTEXCNT																																		//定义使用的最大的互斥量的数目
  #define OS_MUTEXCNT    8
 #endif
 
