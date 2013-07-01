@@ -12,7 +12,7 @@ OS_TID tsk_1,tsk_2;
 
 __task void LedTest(void)
 {
-	printf("task LedTest running\n");
+	printf("task LedTest\n");
 	while(1)
 	{
 		switch (LedCunt)
@@ -23,7 +23,7 @@ __task void LedTest(void)
 				GPIOD ->BSRRL |= GPIO_Pin_14;
 				GPIOD ->BSRRL |= GPIO_Pin_15;
 				GPIOC ->BSRRL |= GPIO_Pin_7;
-				printf("Led 1 Light\n");
+				//printf("Led 1 Light\n");
 				LedDelay();
 				LedCunt += 1;
 			}
@@ -33,7 +33,7 @@ __task void LedTest(void)
 				GPIOD ->BSRRH |= GPIO_Pin_14;
 				GPIOD ->BSRRL |= GPIO_Pin_15;
 				GPIOC ->BSRRL |= GPIO_Pin_7;
-				printf("Led 1/2 Light\n");
+				//printf("Led 1/2 Light\n");
 				LedDelay();
 				LedCunt += 1;
 			}
@@ -43,7 +43,7 @@ __task void LedTest(void)
 				GPIOD ->BSRRH |= GPIO_Pin_14;
 				GPIOD ->BSRRH |= GPIO_Pin_15;
 				GPIOC ->BSRRL |= GPIO_Pin_7;
-				printf("Led 1/2/3 Light\n");
+				//printf("Led 1/2/3 Light\n");
 				LedDelay();
 				LedCunt += 1;
 			}
@@ -53,7 +53,7 @@ __task void LedTest(void)
 				GPIOD ->BSRRH |= GPIO_Pin_14;
 				GPIOD ->BSRRH |= GPIO_Pin_15;
 				GPIOC ->BSRRH |= GPIO_Pin_7;
-				printf("Led 1/2/3/4 Light\n");
+				//printf("Led 1/2/3/4 Light\n");
 				LedDelay();
 				LedCunt += 1;
 			}
@@ -63,7 +63,7 @@ __task void LedTest(void)
 				GPIOD ->BSRRL |= GPIO_Pin_14;
 				GPIOD ->BSRRL |= GPIO_Pin_15;
 				GPIOC ->BSRRL |= GPIO_Pin_7;
-				printf("No Led Light\n");
+				//printf("No Led Light\n");
 				LedDelay();
 				LedCunt = 0;
 			}
@@ -73,13 +73,10 @@ __task void LedTest(void)
 
 __task void Inter_Uart(void)
 {
-	RxCounter = 0;
-	TxCounter = 0;
-	NVIC_Config();
-	USART_ITConfig(USART1, USART_IT_TXE, ENABLE);
-	while(TxCounter < NbrOfDataToTransfer)
-  	{}
-	USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
+	
+	printf("task Inter Uart\n");
+	USART_ITConfig(USART1, USART_IT_TXE, ENABLE);			//串口发送中断使能
+	USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);		//串口接收完成中断
 	while(1);
 }
 
@@ -97,5 +94,7 @@ int main(void)
 	LedCunt = 0;
 	LedInit();
 	usartinit();
+	NVIC_Config();
 	os_sys_init(run);
+	for(;;);
 }

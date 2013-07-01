@@ -1,6 +1,15 @@
 #include "irq.h"
 #include "usart.h"
+#include "stdio.h"
 
+
+char RxBuffer[50];
+
+char tempbuf[] = "\n\rUSART Printf Example: retarget the C library printf function to the USART\n\r" ;
+unsigned char  RxCounter;
+unsigned char  TxCounter;
+unsigned char NbrOfDataToTransfer  = countof(tempbuf);
+unsigned char NbrOfDataToRead  = 50;
 
 void NVIC_Config(void)
 {
@@ -17,6 +26,7 @@ void NVIC_Config(void)
 void USART1_IRQHandler(void)
 {
   unsigned char temp;
+	//printf("USART1 IRQHandler!\n");
   if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET)		//串口接收寄存器中断
   {
     /* Read one byte from the receive data register */

@@ -849,8 +849,8 @@ Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=.\out\st
 ARM Macro Assembler    Page 14 
 
 
-artup_stm32f2xx.d -o.\out\startup_stm32f2xx.o -Id:\Keil\ARM\RV31\INC -Id:\Keil\
-ARM\CMSIS\Include -Id:\Keil\ARM\Inc\ST\STM32F2xx --predefine="__RTX SETA 1" --l
+artup_stm32f2xx.d -o.\out\startup_stm32f2xx.o -ID:\Keil\ARM\RV31\INC -ID:\Keil\
+ARM\CMSIS\Include -ID:\Keil\ARM\Inc\ST\STM32F2xx --predefine="__RTX SETA 1" --l
 ist=.\startup_stm32f2xx.lst startup\startup_stm32f2xx.s
 
 
