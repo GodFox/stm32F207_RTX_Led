@@ -1027,7 +1027,7 @@ I (.\STM32F2xx_StdPeriph_Driver\inc\stm32f2xx_usart.h)(0x51D0D67D)
 I (.\STM32F2xx_StdPeriph_Driver\inc\misc.h)(0x51D0D67D)
 F (.\CMSIS\core_cm3.c)(0x51D0D67D)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork -I.\CMSIS -I.\Device -I.\STM32F2xx_StdPeriph_Driver\inc -I D:\Keil\ARM\RV31\INC -I D:\Keil\ARM\CMSIS\Include -I D:\Keil\ARM\Inc\ST\STM32F2xx -DUSE_STDPERIPH_DRIVER -o ".\out\core_cm3.o" --omf_browse ".\out\core_cm3.crf" --depend ".\out\core_cm3.d")
 I (D:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x516E81E6)
-F (.\User\main.c)(0x51D15439)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork -I.\CMSIS -I.\Device -I.\STM32F2xx_StdPeriph_Driver\inc -I D:\Keil\ARM\RV31\INC -I D:\Keil\ARM\CMSIS\Include -I D:\Keil\ARM\Inc\ST\STM32F2xx -DUSE_STDPERIPH_DRIVER -o ".\out\main.o" --omf_browse ".\out\main.crf" --depend ".\out\main.d")
+F (.\User\main.c)(0x51D27C00)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork -I.\CMSIS -I.\Device -I.\STM32F2xx_StdPeriph_Driver\inc -I D:\Keil\ARM\RV31\INC -I D:\Keil\ARM\CMSIS\Include -I D:\Keil\ARM\Inc\ST\STM32F2xx -DUSE_STDPERIPH_DRIVER -o ".\out\main.o" --omf_browse ".\out\main.crf" --depend ".\out\main.d")
 I (.\Device\stm32f2xx.h)(0x51D0D67D)
 I (.\CMSIS\core_cm3.h)(0x51D0D67D)
 I (D:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x516E81E6)
@@ -1062,7 +1062,7 @@ I (.\STM32F2xx_StdPeriph_Driver\inc\misc.h)(0x51D0D67D)
 I (User\usart.h)(0x51D0D67D)
 I (User\led.h)(0x51D0D67D)
 I (User\irq.h)(0x51D11D2F)
-I (User\key.c)(0x51D1551B)
+I (User\key.c)(0x51D2777A)
 I (D:\Keil\ARM\ARMCC\bin\..\include\stdio.h)(0x516E81E6)
 I (D:\Keil\ARM\RV31\INC\RTL.h)(0x51D135B7)
 F (.\User\RTX_Conf_CM.c)(0x51D1405D)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork -I.\CMSIS -I.\Device -I.\STM32F2xx_StdPeriph_Driver\inc -I D:\Keil\ARM\RV31\INC -I D:\Keil\ARM\CMSIS\Include -I D:\Keil\ARM\Inc\ST\STM32F2xx -DUSE_STDPERIPH_DRIVER -o ".\out\rtx_conf_cm.o" --omf_browse ".\out\rtx_conf_cm.crf" --depend ".\out\rtx_conf_cm.d")
